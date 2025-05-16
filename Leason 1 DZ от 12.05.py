@@ -8,9 +8,11 @@ print(name)
 print("Длина строки:", len(name))  
 
 # 3. Создайте переменную булевого типа и выведите её значение.
-II = 888
-who_is_stronger = II > satana
-print(who_is_stronger)
+# II = 888
+# who_is_stronger = II > satana
+# print(who_is_stronger)
+trololo = True
+print("Значение переменной trololo:", trololo)
 
 # 4. Напишите программу, которая запрашивает у пользователя число и выводит его квадрат.
 number = float(input('Введите число 1: '))

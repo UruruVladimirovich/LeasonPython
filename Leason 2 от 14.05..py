@@ -90,8 +90,8 @@ print(oper3(2,2))    #  4 """
 
 
 # square = lambda n,p: n * p
-# print(square(4))     #  16
-# print(square(5))     #  25
+# print(square(4,4))     #  16
+# print(square(5,5))     #  25
 
 # def kvadrat(n):
 #     return n * n
@@ -187,8 +187,8 @@ outher()        #   25 """
 """ def createCounter():
     n = 0
 
-    def createCounter1():
-        nonlocal n
+    def counter():
+        nonlocal n    # nonlocal позволяет изменять переменную из ближайшей внешней (но не глобальной) области видимости.
         n += 1
         return n
     return createCounter1
@@ -198,15 +198,26 @@ print(createCounter1())
 print(createCounter1())
  """
 
-def createCounter():
-    n = 0
+# def createCounter():
+#     n = 0
 
-    def createCounter1():
-        nonlocal n
-        n += 1
-        print(n)
-    return createCounter1
-createCounter1 = createCounter()
-createCounter1()
-createCounter1()
-createCounter1()
+#     def counter():
+#         nonlocal n
+#         n += 1
+#         return n
+#     return createCounter1
+# createCounter1 = createCounter()
+# createCounter1()
+# createCounter1()
+# createCounter1()
+
+
+secret = 123  # Глобальная переменная
+
+def test2():
+    # global secret  # закомментировано
+    secret = 1234    # Локальная переменная функции
+    print("Секретная переменная внутри функции:", secret)
+
+test2()
+print("Глобальная переменная:", secret)  # 123
