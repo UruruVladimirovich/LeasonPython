@@ -37,6 +37,28 @@ print(labels)
 Задача: Напишите функцию, которая принимает другую функцию и
 список чисел, применяет эту функцию к каждому элементу списка. """
 
+def outer(func, list):
+    for i in list:
+        print(func(i))
+
+def inner(i):
+    return 1 + i
+
+list1 = [1, 5, 3]
+outer(inner, list1)
+
+
+def outer(numbers):
+    def inner(i):
+        return 1 + i
+
+    for num in numbers:
+        print(inner(num))
+
+list1 = [1, 5, 3]
+outer(list1)
+      
+
 result = list(map(lambda x: x + 10, [1, 2, 3]))  #map (возвращает итератор, который можно преобразовать в список)
 print(result)
 
@@ -68,6 +90,13 @@ if True:                  #  `if` не создаёт новой области 
     print(temp)
 print(temp)       # не выводит ошибки так как не функция, которая могла бы создать локальную область видимости(переменные внутри функции не видны снаружи, если не объявлены как global или nonlocal).
 print(count) # во всех  случаях выводит 10
+
+def local():
+    temp=5
+    temp+=count
+    return print(temp)
+local()
+print(temp)
 
 
 """ 5. Простой счётчик
