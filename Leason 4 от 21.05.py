@@ -284,3 +284,18 @@ child = Child("Иванько", iq_father=120, colorEyes_father="голубые"
 child.print()
  """
 
+class Grandparent:
+    def show(self):
+        print("Grandparent")
+
+class Parent1(Grandparent):
+    pass
+
+class Parent2(Grandparent):
+    pass
+
+class Child(Parent1, Parent2):
+    pass
+
+obj = Child()
+obj.show()  # Какой show() вызовется    #  Grandparent

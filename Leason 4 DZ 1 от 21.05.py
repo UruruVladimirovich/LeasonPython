@@ -22,6 +22,14 @@
 
 """                      Практическая часть                        """
 
+# Задание 1: Базовый класс с геттерами и сеттерами
+# 1. Создайте класс Person со следующими требованиями:
+# 2. Приватные атрибуты: __name, __age
+# 3. Геттеры и сеттеры для этих атрибутов с проверками:
+# 4. Имя не должно быть пустым и должно состоять только из букв
+# 5. Возраст должен быть целым числом от 0 до 120
+
+
 class Person:
     def __init__(self, name, age):
         self.__name = name
@@ -43,3 +51,41 @@ class Person:
 
 student = Person("Ururu", 16)
 student.print()
+
+
+
+# Задание 2: Класс с вычисляемым свойством
+# Создайте класс Rectangle:
+# 1. Приватные атрибуты: __width, __height
+# 2. Геттеры и сеттеры для ширины и высоты (должны быть положительными числами)
+# 3. Свойство area (только геттер), которое возвращает площадь прямоугольника
+
+class Rectangle:
+    def __init__(self, width, height):
+        self.__width = width
+        self.__height = height
+    
+    @property
+    def width(self):
+        return self.__width
+    
+    @width.setter
+    def width(self, value):
+        self.__width = value
+    
+    @property
+    def height(self):
+        return self.__height
+    
+    @height.setter
+    def height(self, value):
+        self.__height = value
+    
+    @property
+    def square(self):
+        return self.__width * self.__height
+
+rect = Rectangle(5, 10)
+print(rect.square)
+
+
