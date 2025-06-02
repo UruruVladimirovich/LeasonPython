@@ -188,7 +188,9 @@ squared_evens = map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, numbers))
 print(list(squared_evens))  # [4, 16]  (2² и 4²)
 
 
-"""                         Кортежи                     """
+
+
+"""                                 Кортежи                              """
 
                                 # Простой кортеж
 """ 
